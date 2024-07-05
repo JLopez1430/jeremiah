@@ -1,42 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>My Websites</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Boutique</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #e9ecef;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .header {
+            text-align: center;
+            background-color: #007bff; /* Blue background */
+            color: white;
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+        }
+        .header h2 {
+            margin: 0;
+            font-size: 3em;
+            color: white;
+            animation: textGlow 2s infinite alternate;
+        }
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+            }
+        }
+        .product {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1; /* Ensure equal width */
+        }
+        .product:hover {
+            transform: scale(1.1);
+            background-color: #e2e6ea;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product label {
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
+        .product input {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        .orders {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container"> 
-    <div class="row">
-      <div class="col-4"> 
-        <h1> Jeremiah pogi ng tebag </h1>   
-          <img src="21d25770-1b0d-4cfd-bab0-bce5b77bbfe4.jfif" class="img-thumbnail" style="width:400px; height:500px;"/>
-         <button type="button" class="btn btn-primary" id="btnLike1"> Like &#128077</button>
-         <output id="count1">0</output>
-
-         <button type="button" class="btn btn-primary" id="btnDisLike1"> DisLike &#128078</button>
-         <output id="countDisLike1">0</output>
-      </div>
-      <div class="col-4"> 
-        <h1> My future wife </h1>
-          <img src="827d5b4d-ab7f-4222-80f7-76bfbe0dc87f.jfif" class="img-thumbnail" style="width:400px; height:500px;"/>
-         <button type="button" class="btn btn-primary" id="btnLike2"> Like &#128077</button>
-         <output id="count2">0</output>
-
-         <button type="button" class="btn btn-primary" id="btnDisLike2"> DisLike &#128078</button>
-         <output id="countDisLike2">0</output>
-      </div>
-         <div class="col-4"> 
-           Comments<br>
-           <input type="text" class="form-control" id="comment"/>
-           <button class="btn btn-success" id="submit">Submit</button>
-           <textarea class="form-control" id="commentbox" rows=30></textarea>
-         </div>
+    <div class="container">
+        <div class="header">
+            <h2>My Boutique</h2>
+            <p>Your Fashion Hub</p>
+            <hr class="hr">
+        </div>
+        <div class="row">
+            <div class="col-md-4 d-flex">
+                <div class="product flex-fill">
+                    <label id="product1">Elegant Dress</label>   
+                    <img src="dress1.png" class="img-thumbnail">
+                    <label id="price1">$120.00</label>
+                    <input type="number" class="form-control" id="qty1" placeholder="Enter quantity">
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="product flex-fill">
+                    <label id="product2">Classic Suit</label>   
+                    <img src="suit1.png" class="img-thumbnail">
+                    <label id="price2">$250.00</label>
+                    <input type="number" class="form-control" id="qty2" placeholder="Enter quantity">
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="product flex-fill">
+                    <label id="product3">Summer Hat</label>   
+                    <img src="hat1.png" class="img-thumbnail">
+                    <label id="price3">$40.00</label>
+                    <input type="number" class="form-control" id="qty3" placeholder="Enter quantity">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 d-flex">
+                <div class="product flex-fill">
+                    <label id="product4">Leather Shoes</label>   
+                    <img src="shoes1.png" class="img-thumbnail">
+                    <label id="price4">$180.00</label>
+                    <input type="number" class="form-control" id="qty4" placeholder="Enter quantity">
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="product flex-fill">
+                    <label id="product5">Designer Handbag</label>   
+                    <img src="handbag1.png" class="img-thumbnail">
+                    <label id="price5">$300.00</label>
+                    <input type="number" class="form-control" id="qty5" placeholder="Enter quantity">
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="product flex-fill">
+                    <label id="product6">Wristwatch</label>   
+                    <img src="watch1.png" class="img-thumbnail">
+                    <label id="price6">$150.00</label>
+                    <input type="number" class="form-control" id="qty6" placeholder="Enter quantity">
+                </div>
+            </div>
+        </div>
+        <div class="row orders">
+            <div class="col-md-12">
+                <label for="carts">Orders</label><br>
+                <textarea class="form-control" rows="10" id="carts" cols="200" readonly style="width:100%;font-size:12px;"></textarea>
+                <input type="text" class="form-control border-0" id="total" readonly placeholder="Total">
+                <input type="number" class="form-control" id="cash" placeholder="Cash Tendered">
+                <input type="text" class="form-control border-0" id="change" readonly placeholder="Change">
+            </div>
+        </div>
     </div>
-  </div>
-  <script src="index.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
