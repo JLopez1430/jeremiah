@@ -35,31 +35,19 @@
                 text-shadow: 0 0 20px rgba(255, 255, 255, 1);
             }
         }
-        .header::before, .header::after {
-            content: '';
+        .header .animated-logo {
+            font-size: 2em;
+            animation: logoAnimation 10s infinite linear;
             position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%);
-            animation: animateGlow 5s infinite;
-        }
-        .header::before {
-            top: -50%;
+            top: 10px;
             left: 50%;
             transform: translateX(-50%);
+            opacity: 0.5;
         }
-        .header::after {
-            bottom: -50%;
-            right: 50%;
-            transform: translateX(50%);
-        }
-        @keyframes animateGlow {
-            0%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            50% {
-                transform: translateX(-50%) translateY(-20%);
-            }
+        @keyframes logoAnimation {
+            0% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+            50% { transform: translateX(-50%) translateY(20px); opacity: 1; }
+            100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
         }
         .product {
             background-color: #ffffff;
@@ -71,12 +59,13 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            flex: 1; /* Ensure equal width */
+            flex: 1;
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
         }
         .product:hover {
-            transform: scale(1.1);
-            background-color: #e2e6ea;
-            transition: transform 0.3s, background-color 0.3s;
+            transform: translateY(-10px) scale(1.05);
+            background-color: #f8f9fa;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         .product img {
             max-width: 100%;
@@ -106,6 +95,7 @@
             <h2>My Boutique</h2>
             <p>Your Fashion Hub</p>
             <hr class="hr">
+            <div class="animated-logo">👗👜👠</div>
         </div>
         <div class="row">
             <div class="col-md-4 d-flex">
