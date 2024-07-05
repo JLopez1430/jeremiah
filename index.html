@@ -44,10 +44,19 @@
             transform: translateX(-50%);
             opacity: 0.5;
         }
+        .header .repeating-logos {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .header .repeating-logos .logo {
+            margin: 0 10px;
+            animation: logoAnimation 10s infinite linear;
+        }
         @keyframes logoAnimation {
-            0% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
-            50% { transform: translateX(-50%) translateY(20px); opacity: 1; }
-            100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+            0% { transform: translateY(0); opacity: 0.5; }
+            50% { transform: translateY(20px); opacity: 1; }
+            100% { transform: translateY(0); opacity: 0.5; }
         }
         .product {
             background-color: #ffffff;
@@ -96,6 +105,11 @@
             <p>Your Fashion Hub</p>
             <hr class="hr">
             <div class="animated-logo">👗👜👠</div>
+            <div class="repeating-logos">
+                <div class="logo">🧢</div>
+                <div class="logo">🧢</div>
+                <div class="logo">🧢</div>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-4 d-flex">
@@ -162,3 +176,4 @@
     <script src="app.js"></script>
 </body>
 </html>
+
